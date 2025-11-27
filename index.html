@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>World Geography Quiz</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="quiz-header">
+            <h1>🌍 World Quiz</h1>
+            <p>Test your knowledge about countries, capitals, famous attractions, and African history!</p>
+        </div>
+
+        <div id="category-selector" class="category-selector">
+            <h2>Choose Your Quiz Category</h2>
+            <div class="category-buttons">
+                <button id="geography-btn" class="btn btn-category">
+                    <span class="category-icon">🗺️</span>
+                    <span class="category-title">Geography</span>
+                    <span class="category-desc">Capitals & Attractions</span>
+                </button>
+                <button id="history-btn" class="btn btn-category">
+                    <span class="category-icon">📚</span>
+                    <span class="category-title">African History</span>
+                    <span class="category-desc">Founders & Colonial Names</span>
+                </button>
+            </div>
+        </div>
+
+        <div id="quiz-container" class="quiz-container" style="display: none;">
+            <div class="question-counter">
+                <span id="current-question">1</span> / <span id="total-questions">20</span>
+            </div>
+
+            <div class="progress-bar">
+                <div id="progress" class="progress"></div>
+            </div>
+
+            <div id="question-container">
+                <h2 id="question" class="question"></h2>
+                <div id="options" class="options"></div>
+            </div>
+
+            <button id="next-btn" class="btn btn-next" style="display: none;">Next Question</button>
+        </div>
+
+        <div id="result-container" class="result-container" style="display: none;">
+            <h2>Quiz Complete! 🎉</h2>
+            <div class="score-display">
+                <div class="score-circle">
+                    <span id="final-score">0</span>
+                    <span class="score-total">/ 10</span>
+                </div>
+            </div>
+            <p id="result-message" class="result-message"></p>
+            <div id="score-breakdown" class="score-breakdown"></div>
+            <button id="restart-btn" class="btn btn-restart">Take Quiz Again</button>
+            <button id="home-btn" class="btn btn-home">Choose Another Category</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
