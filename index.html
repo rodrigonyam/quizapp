@@ -26,6 +26,11 @@
                     <span class="category-title">African History</span>
                     <span class="category-desc">Founders & Colonial Names</span>
                 </button>
+                <button id="diagram-btn" class="btn btn-category">
+                    <span class="category-icon">📊</span>
+                    <span class="category-title">Geography Diagrams</span>
+                    <span class="category-desc">Visual Analysis & Maps</span>
+                </button>
             </div>
         </div>
 
@@ -39,6 +44,10 @@
             </div>
 
             <div id="question-container">
+                <div id="question-image-container" class="question-image-container" style="display: none;">
+                    <img id="question-image" class="question-image" alt="Question diagram">
+                    <p id="image-source" class="image-source"></p>
+                </div>
                 <h2 id="question" class="question"></h2>
                 <div id="options" class="options"></div>
             </div>
@@ -56,8 +65,13 @@
             </div>
             <p id="result-message" class="result-message"></p>
             <div id="score-breakdown" class="score-breakdown"></div>
+            <div id="sources-section" class="sources-section" style="display: none;">
+                <h3>Image Sources & Credits</h3>
+                <div id="sources-list" class="sources-list"></div>
+            </div>
             <button id="restart-btn" class="btn btn-restart">Take Quiz Again</button>
             <button id="home-btn" class="btn btn-home">Choose Another Category</button>
+            <button id="sources-btn" class="btn btn-sources" style="display: none;">View Sources</button>
         </div>
     </div>
 

@@ -1,0 +1,8 @@
+<!-- Simple SVG placeholder for water cycle diagram -->
+<svg width="400" height="300" xmlns="http://www.w3.org/2000/svg">
+  <rect width="400" height="300" fill="#87CEEB"/>
+  <circle cx="100" cy="50" r="30" fill="#FFD700"/>
+  <path d="M 50 200 Q 200 100 350 200" stroke="#4682B4" stroke-width="3" fill="none"/>
+  <text x="200" y="150" text-anchor="middle" font-family="Arial" font-size="16" fill="#000">Water Cycle Diagram</text>
+  <text x="200" y="170" text-anchor="middle" font-family="Arial" font-size="12" fill="#333">Placeholder Image</text>
+</svg>

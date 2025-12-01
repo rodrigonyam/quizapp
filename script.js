@@ -606,6 +606,289 @@ const historyQuestions = [
     }
 ];
 
+const diagramQuestions = [
+    {
+        question: "Which diagram shows the correct water cycle process?",
+        image: "images/water_cycle.svg",
+        source: "NASA Earth Science Division",
+        options: ["Evaporation → Condensation → Precipitation", "Precipitation → Evaporation → Condensation", "Condensation → Precipitation → Evaporation", "Precipitation → Condensation → Evaporation"],
+        correct: 0
+    },
+    {
+        question: "This diagram shows which type of geological formation?",
+        image: "images/volcano_cross_section.jpg",
+        source: "U.S. Geological Survey",
+        options: ["Sedimentary layers", "Volcanic structure", "Tectonic plate boundary", "Erosion pattern"],
+        correct: 1
+    },
+    {
+        question: "What does this world map projection represent?",
+        image: "images/mercator_projection.jpg",
+        source: "National Geographic Society",
+        options: ["Robinson Projection", "Mercator Projection", "Peters Projection", "Mollweide Projection"],
+        correct: 1
+    },
+    {
+        question: "This climate diagram represents which climate type?",
+        image: "images/tropical_climate_chart.jpg",
+        source: "World Meteorological Organization",
+        options: ["Desert Climate", "Tropical Climate", "Temperate Climate", "Arctic Climate"],
+        correct: 1
+    },
+    {
+        question: "What type of mountain formation is shown in this cross-section?",
+        image: "images/fold_mountains.jpg",
+        source: "British Geological Survey",
+        options: ["Fold Mountains", "Fault-block Mountains", "Volcanic Mountains", "Dome Mountains"],
+        correct: 0
+    },
+    {
+        question: "This river system diagram shows which geographical feature?",
+        image: "images/river_delta.jpg",
+        source: "USGS Water Resources",
+        options: ["River Source", "River Delta", "River Meander", "River Canyon"],
+        correct: 1
+    },
+    {
+        question: "What type of coastal feature is illustrated in this diagram?",
+        image: "images/coastal_erosion.jpg",
+        source: "Coastal Studies Institute",
+        options: ["Coastal Deposition", "Coastal Erosion", "Coral Reef Formation", "Tidal Pool System"],
+        correct: 1
+    },
+    {
+        question: "This diagram shows which atmospheric layer structure?",
+        image: "images/atmosphere_layers.jpg",
+        source: "NOAA Earth System Research Laboratory",
+        options: ["Troposphere only", "Complete Atmosphere", "Stratosphere only", "Ionosphere only"],
+        correct: 1
+    },
+    {
+        question: "What type of ecosystem is represented in this food web diagram?",
+        image: "images/forest_ecosystem.jpg",
+        source: "World Wildlife Fund",
+        options: ["Desert Ecosystem", "Forest Ecosystem", "Marine Ecosystem", "Grassland Ecosystem"],
+        correct: 1
+    },
+    {
+        question: "This geological time scale shows which era highlighted?",
+        image: "images/geological_timeline.jpg",
+        source: "International Commission on Stratigraphy",
+        options: ["Paleozoic Era", "Mesozoic Era", "Cenozoic Era", "Precambrian Era"],
+        correct: 2
+    },
+    {
+        question: "What type of plate boundary is shown in this cross-section?",
+        image: "images/convergent_boundary.jpg",
+        source: "U.S. Geological Survey",
+        options: ["Divergent Boundary", "Convergent Boundary", "Transform Boundary", "Passive Boundary"],
+        correct: 1
+    },
+    {
+        question: "This weather map symbol indicates what meteorological condition?",
+        image: "images/weather_front.jpg",
+        source: "National Weather Service",
+        options: ["High Pressure", "Cold Front", "Warm Front", "Occluded Front"],
+        correct: 1
+    },
+    {
+        question: "What type of soil profile is illustrated in this diagram?",
+        image: "images/soil_horizons.jpg",
+        source: "Soil Science Society of America",
+        options: ["Sandy Soil", "Clay Soil", "Layered Soil Horizons", "Rocky Soil"],
+        correct: 2
+    },
+    {
+        question: "This urban planning diagram shows which city layout principle?",
+        image: "images/radial_city_plan.jpg",
+        source: "Urban Land Institute",
+        options: ["Grid Pattern", "Radial Pattern", "Organic Pattern", "Linear Pattern"],
+        correct: 1
+    },
+    {
+        question: "What type of glacier formation is depicted in this cross-section?",
+        image: "images/valley_glacier.jpg",
+        source: "National Snow and Ice Data Center",
+        options: ["Continental Glacier", "Valley Glacier", "Piedmont Glacier", "Tidewater Glacier"],
+        correct: 1
+    },
+    {
+        question: "This population pyramid represents which demographic trend?",
+        image: "images/aging_population.jpg",
+        source: "United Nations Population Division",
+        options: ["Young Population", "Aging Population", "Stable Population", "Declining Population"],
+        correct: 1
+    },
+    {
+        question: "What type of transportation network is shown in this diagram?",
+        image: "images/hub_spoke_network.jpg",
+        source: "International Air Transport Association",
+        options: ["Linear Network", "Hub-and-Spoke Network", "Grid Network", "Ring Network"],
+        correct: 1
+    },
+    {
+        question: "This cross-section shows which type of aquifer system?",
+        image: "images/confined_aquifer.jpg",
+        source: "U.S. Geological Survey",
+        options: ["Unconfined Aquifer", "Confined Aquifer", "Perched Aquifer", "Artesian Aquifer"],
+        correct: 1
+    },
+    {
+        question: "What agricultural pattern is illustrated in this aerial view?",
+        image: "images/contour_farming.jpg",
+        source: "USDA Natural Resources Conservation Service",
+        options: ["Strip Farming", "Contour Farming", "Terraced Farming", "Monoculture Farming"],
+        correct: 1
+    },
+    {
+        question: "This diagram represents which type of economic model?",
+        image: "images/core_periphery_model.jpg",
+        source: "World Bank Economic Research",
+        options: ["Linear Economy", "Core-Periphery Model", "Circular Economy", "Mixed Economy"],
+        correct: 1
+    },
+    {
+        question: "What type of settlement pattern is shown in this map?",
+        image: "images/linear_settlement.jpg",
+        source: "Geographic Information Systems Society",
+        options: ["Clustered Settlement", "Linear Settlement", "Dispersed Settlement", "Nucleated Settlement"],
+        correct: 1
+    },
+    {
+        question: "This energy flow diagram represents which renewable source?",
+        image: "images/solar_energy_flow.jpg",
+        source: "International Renewable Energy Agency",
+        options: ["Wind Energy", "Solar Energy", "Hydroelectric Energy", "Geothermal Energy"],
+        correct: 1
+    },
+    {
+        question: "What type of land use pattern is depicted in this urban model?",
+        image: "images/concentric_zone_model.jpg",
+        source: "American Planning Association",
+        options: ["Sector Model", "Concentric Zone Model", "Multiple Nuclei Model", "Galactic City Model"],
+        correct: 1
+    },
+    {
+        question: "This ocean current map shows which major circulation pattern?",
+        image: "images/gulf_stream.jpg",
+        source: "NOAA Ocean Service",
+        options: ["California Current", "Gulf Stream", "Kuroshio Current", "Antarctic Circumpolar Current"],
+        correct: 1
+    },
+    {
+        question: "What type of mineral formation process is illustrated here?",
+        image: "images/crystal_formation.jpg",
+        source: "Mineralogical Society of America",
+        options: ["Sedimentary Process", "Igneous Process", "Metamorphic Process", "Crystal Formation"],
+        correct: 3
+    },
+    {
+        question: "This cross-section shows which type of cave formation?",
+        image: "images/limestone_cave.jpg",
+        source: "National Speleological Society",
+        options: ["Lava Tube", "Limestone Cave", "Sea Cave", "Ice Cave"],
+        correct: 1
+    },
+    {
+        question: "What agricultural zone is represented in this von Thünen model?",
+        image: "images/von_thunen_model.jpg",
+        source: "Agricultural Geography Research Institute",
+        options: ["Market Gardening", "Grain Farming", "Livestock Ranching", "Forestry"],
+        correct: 0
+    },
+    {
+        question: "This migration flow diagram shows which type of movement?",
+        image: "images/rural_urban_migration.jpg",
+        source: "International Organization for Migration",
+        options: ["International Migration", "Rural-Urban Migration", "Seasonal Migration", "Return Migration"],
+        correct: 1
+    },
+    {
+        question: "What type of coastal landform is shown in this formation diagram?",
+        image: "images/barrier_island.jpg",
+        source: "Coastal Geology Institute",
+        options: ["Peninsula", "Barrier Island", "Headland", "Bay"],
+        correct: 1
+    },
+    {
+        question: "This watershed diagram illustrates which hydrological concept?",
+        image: "images/drainage_basin.jpg",
+        source: "International Association of Hydrological Sciences",
+        options: ["Groundwater Flow", "Drainage Basin", "Water Table", "Aquifer Recharge"],
+        correct: 1
+    },
+    {
+        question: "What type of vegetation distribution is shown in this biome map?",
+        image: "images/biome_distribution.jpg",
+        source: "World Biome Research Center",
+        options: ["Tropical Rainforest", "Temperate Grassland", "Boreal Forest", "Global Biome Distribution"],
+        correct: 3
+    },
+    {
+        question: "This seismic activity map indicates which geological phenomenon?",
+        image: "images/earthquake_zones.jpg",
+        source: "Global Seismographic Network",
+        options: ["Volcanic Activity", "Earthquake Zones", "Mineral Deposits", "Fault Lines"],
+        correct: 1
+    },
+    {
+        question: "What urban growth pattern is illustrated in this development model?",
+        image: "images/suburban_sprawl.jpg",
+        source: "Urban Studies Research Institute",
+        options: ["Compact Development", "Suburban Sprawl", "Vertical Growth", "Mixed-Use Development"],
+        correct: 1
+    },
+    {
+        question: "This trade flow diagram represents which economic relationship?",
+        image: "images/global_trade_flows.jpg",
+        source: "World Trade Organization",
+        options: ["Bilateral Trade", "Global Trade Flows", "Regional Trade", "Commodity Exchange"],
+        correct: 1
+    },
+    {
+        question: "What type of erosion pattern is shown in this landscape diagram?",
+        image: "images/badlands_erosion.jpg",
+        source: "National Park Service Geology Division",
+        options: ["Glacial Erosion", "Water Erosion", "Wind Erosion", "Chemical Weathering"],
+        correct: 1
+    },
+    {
+        question: "This climate change projection shows which environmental trend?",
+        image: "images/sea_level_rise.jpg",
+        source: "Intergovernmental Panel on Climate Change",
+        options: ["Temperature Rise", "Sea Level Rise", "Precipitation Change", "Ice Sheet Melting"],
+        correct: 1
+    },
+    {
+        question: "What type of agricultural system is depicted in this field pattern?",
+        image: "images/field_systems.jpg",
+        source: "Food and Agriculture Organization",
+        options: ["Open Field System", "Enclosed Field System", "Collective Farming", "Plantation System"],
+        correct: 1
+    },
+    {
+        question: "This demographic transition model shows which population stage?",
+        image: "images/demographic_transition.jpg",
+        source: "Population Reference Bureau",
+        options: ["Stage 1: High Growth", "Stage 2: Early Transition", "Stage 3: Late Transition", "Stage 4: Low Growth"],
+        correct: 2
+    },
+    {
+        question: "What type of landform evolution is illustrated in this sequence?",
+        image: "images/mountain_erosion_sequence.jpg",
+        source: "Geomorphology Research Center",
+        options: ["Mountain Building", "Mountain Erosion", "Valley Formation", "Plateau Development"],
+        correct: 1
+    },
+    {
+        question: "This industrial location model represents which economic theory?",
+        image: "images/weber_location_theory.jpg",
+        source: "Industrial Geography Association",
+        options: ["Central Place Theory", "Weber's Location Theory", "Growth Pole Theory", "Cumulative Causation"],
+        correct: 1
+    }
+];
+
 let currentQuestion = 0;
 let score = 0;
 let userAnswers = [];
@@ -616,6 +899,7 @@ let currentCategory = '';
 const categorySelector = document.getElementById('category-selector');
 const geographyBtn = document.getElementById('geography-btn');
 const historyBtn = document.getElementById('history-btn');
+const diagramBtn = document.getElementById('diagram-btn');
 const questionElement = document.getElementById('question');
 const optionsElement = document.getElementById('options');
 const nextBtn = document.getElementById('next-btn');
@@ -629,6 +913,12 @@ const resultMessageElement = document.getElementById('result-message');
 const scoreBreakdownElement = document.getElementById('score-breakdown');
 const restartBtn = document.getElementById('restart-btn');
 const homeBtn = document.getElementById('home-btn');
+const questionImageContainer = document.getElementById('question-image-container');
+const questionImage = document.getElementById('question-image');
+const imageSource = document.getElementById('image-source');
+const sourcesSection = document.getElementById('sources-section');
+const sourcesList = document.getElementById('sources-list');
+const sourcesBtn = document.getElementById('sources-btn');
 
 // Category selection
 geographyBtn.addEventListener('click', () => {
@@ -640,6 +930,12 @@ geographyBtn.addEventListener('click', () => {
 historyBtn.addEventListener('click', () => {
     currentCategory = 'African History';
     quizData = historyQuestions;
+    startQuiz();
+});
+
+diagramBtn.addEventListener('click', () => {
+    currentCategory = 'Geography Diagrams';
+    quizData = diagramQuestions;
     startQuiz();
 });
 
@@ -666,21 +962,60 @@ function loadQuestion() {
     // Update question counter
     currentQuestionElement.textContent = currentQuestion + 1;
     
-    // Update progress bar
+    // Update progress bar with animation
     const progress = ((currentQuestion) / quizData.length) * 100;
     progressElement.style.width = progress + '%';
     
-    // Display question
-    questionElement.textContent = question.question;
+    // Handle image display for diagram questions
+    if (question.image) {
+        questionImageContainer.style.display = 'block';
+        questionImage.src = question.image;
+        questionImage.alt = question.question;
+        imageSource.textContent = `Source: ${question.source}`;
+        
+        // Add loading animation with error handling
+        questionImage.style.opacity = '0';
+        questionImage.onload = () => {
+            questionImage.style.transition = 'opacity 0.5s ease';
+            questionImage.style.opacity = '1';
+        };
+        
+        questionImage.onerror = () => {
+            // Show placeholder text if image fails to load
+            questionImageContainer.innerHTML = `
+                <div class="image-placeholder">
+                    <div class="placeholder-icon">📊</div>
+                    <p>Image not available</p>
+                    <p class="image-source">Source: ${question.source}</p>
+                </div>
+            `;
+            questionImageContainer.style.display = 'block';
+        };
+    } else {
+        questionImageContainer.style.display = 'none';
+    }
     
-    // Display options
+    // Display question with typewriter effect
+    questionElement.textContent = '';
+    typeWriterEffect(questionElement, question.question, 30);
+    
+    // Display options with stagger animation
     optionsElement.innerHTML = '';
     question.options.forEach((option, index) => {
         const optionDiv = document.createElement('div');
         optionDiv.className = 'option';
         optionDiv.textContent = option;
+        optionDiv.style.opacity = '0';
+        optionDiv.style.transform = 'translateY(20px)';
         optionDiv.addEventListener('click', () => selectOption(index, optionDiv));
         optionsElement.appendChild(optionDiv);
+        
+        // Stagger animation
+        setTimeout(() => {
+            optionDiv.style.transition = 'all 0.3s ease';
+            optionDiv.style.opacity = '1';
+            optionDiv.style.transform = 'translateY(0)';
+        }, index * 100 + 500);
     });
     
     // Hide next button initially
@@ -743,19 +1078,38 @@ function showResults() {
     const percentage = (score / quizData.length) * 100;
     let message = '';
     
-    if (percentage === 100) {
-        message = 'Perfect! You\'re a geography expert! 🏆';
-    } else if (percentage >= 80) {
-        message = 'Excellent work! You know your geography well! 🌟';
-    } else if (percentage >= 60) {
-        message = 'Good job! Keep learning about the world! 👍';
-    } else if (percentage >= 40) {
-        message = 'Not bad! There\'s room for improvement! 📚';
+    if (currentCategory === 'Geography Diagrams') {
+        if (percentage === 100) {
+            message = 'Perfect! You\'re a visual geography expert! 🏆📊';
+        } else if (percentage >= 80) {
+            message = 'Excellent! You can read maps and diagrams like a pro! 🌟🗺️';
+        } else if (percentage >= 60) {
+            message = 'Good work! Your diagram interpretation skills are developing! 👍📈';
+        } else if (percentage >= 40) {
+            message = 'Keep practicing! Visual geography takes time to master! 📚🔍';
+        } else {
+            message = 'Don\'t give up! Study more maps and diagrams! 🌍📊';
+        }
     } else {
-        message = 'Keep practicing! The world awaits! 🌍';
+        if (percentage === 100) {
+            message = 'Perfect! You\'re a geography expert! 🏆';
+        } else if (percentage >= 80) {
+            message = 'Excellent work! You know your geography well! 🌟';
+        } else if (percentage >= 60) {
+            message = 'Good job! Keep learning about the world! 👍';
+        } else if (percentage >= 40) {
+            message = 'Not bad! There\'s room for improvement! 📚';
+        } else {
+            message = 'Keep practicing! The world awaits! 🌍';
+        }
     }
     
     resultMessageElement.textContent = message;
+    
+    // Show sources button for diagram questions
+    if (currentCategory === 'Geography Diagrams') {
+        sourcesBtn.style.display = 'inline-block';
+    }
     
     // Display score breakdown
     scoreBreakdownElement.innerHTML = '<h3 style="margin-bottom: 15px; color: #667eea;">Review Your Answers:</h3>';
@@ -788,6 +1142,89 @@ restartBtn.addEventListener('click', () => {
 homeBtn.addEventListener('click', () => {
     resultContainer.style.display = 'none';
     categorySelector.style.display = 'block';
+    sourcesSection.style.display = 'none';
+    sourcesBtn.style.display = 'none';
     currentCategory = '';
     quizData = [];
+});
+
+// Show sources
+sourcesBtn.addEventListener('click', () => {
+    if (sourcesSection.style.display === 'none') {
+        sourcesSection.style.display = 'block';
+        sourcesBtn.textContent = 'Hide Sources';
+        displaySources();
+    } else {
+        sourcesSection.style.display = 'none';
+        sourcesBtn.textContent = 'View Sources';
+    }
+});
+
+// Typewriter effect function
+function typeWriterEffect(element, text, speed = 50) {
+    let i = 0;
+    function typeWriter() {
+        if (i < text.length) {
+            element.textContent += text.charAt(i);
+            i++;
+            setTimeout(typeWriter, speed);
+        }
+    }
+    typeWriter();
+}
+
+// Display sources for diagram questions
+function displaySources() {
+    sourcesList.innerHTML = '';
+    const uniqueSources = new Set();
+    
+    quizData.forEach((question, index) => {
+        if (question.source && !uniqueSources.has(question.source)) {
+            uniqueSources.add(question.source);
+            const sourceItem = document.createElement('div');
+            sourceItem.className = 'source-item';
+            sourceItem.innerHTML = `
+                <strong>Source:</strong> ${question.source}<br>
+                <em>Used in: ${question.question.substring(0, 50)}...</em>
+            `;
+            sourcesList.appendChild(sourceItem);
+        }
+    });
+}
+
+// Enhanced option selection with sound effects (visual feedback)
+function addInteractiveEffects() {
+    // Add hover sound effect simulation with visual feedback
+    document.addEventListener('mouseover', (e) => {
+        if (e.target.classList.contains('option') && !e.target.classList.contains('disabled')) {
+            e.target.style.transform = 'translateX(10px) scale(1.02)';
+        }
+        if (e.target.classList.contains('btn')) {
+            e.target.style.transform = 'translateY(-3px) scale(1.05)';
+        }
+    });
+    
+    document.addEventListener('mouseout', (e) => {
+        if (e.target.classList.contains('option') && !e.target.classList.contains('disabled')) {
+            e.target.style.transform = 'translateX(0) scale(1)';
+        }
+        if (e.target.classList.contains('btn')) {
+            e.target.style.transform = 'translateY(0) scale(1)';
+        }
+    });
+}
+
+// Add floating animation to category buttons
+function addFloatingAnimation() {
+    const categoryButtons = document.querySelectorAll('.btn-category');
+    categoryButtons.forEach((btn, index) => {
+        btn.style.animation = `float 3s ease-in-out infinite`;
+        btn.style.animationDelay = `${index * 0.5}s`;
+    });
+}
+
+// Initialize interactive effects when DOM is loaded
+document.addEventListener('DOMContentLoaded', () => {
+    addInteractiveEffects();
+    addFloatingAnimation();
 });

@@ -321,6 +321,200 @@ body {
     box-shadow: 0 5px 15px rgba(102, 126, 234, 0.2);
 }
 
+/* Image and Sources Styling */
+.question-image-container {
+    text-align: center;
+    margin-bottom: 25px;
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: 10px;
+    border: 2px solid #e9ecef;
+}
+
+.question-image {
+    max-width: 100%;
+    max-height: 300px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.question-image:hover {
+    transform: scale(1.05);
+}
+
+.image-source {
+    font-size: 0.9em;
+    color: #666;
+    margin-top: 10px;
+    font-style: italic;
+}
+
+.sources-section {
+    background: #f5f5f5;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 20px 0;
+}
+
+.sources-section h3 {
+    color: #667eea;
+    margin-bottom: 15px;
+    font-size: 1.4em;
+}
+
+.sources-list {
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+.source-item {
+    padding: 12px;
+    margin-bottom: 10px;
+    background: white;
+    border-radius: 8px;
+    border-left: 4px solid #667eea;
+    font-size: 0.95em;
+    line-height: 1.4;
+}
+
+.source-item strong {
+    color: #333;
+}
+
+.source-item em {
+    color: #666;
+}
+
+/* Image placeholder styling */
+.image-placeholder {
+    text-align: center;
+    padding: 40px 20px;
+    background: #f8f9fa;
+    border: 2px dashed #dee2e6;
+    border-radius: 10px;
+    color: #6c757d;
+}
+
+.placeholder-icon {
+    font-size: 4em;
+    margin-bottom: 10px;
+}
+
+.image-placeholder p {
+    margin: 5px 0;
+    font-size: 1.1em;
+}
+
+.image-placeholder .image-source {
+    font-size: 0.9em;
+    font-style: italic;
+}
+
+.btn-sources {
+    background: #28a745;
+    color: white;
+    margin-top: 10px;
+}
+
+.btn-sources:hover {
+    background: #218838;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(40, 167, 69, 0.4);
+}
+
+/* Enhanced Animations */
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.btn-category {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-category:hover {
+    animation: pulse 0.6s ease-in-out;
+}
+
+.option {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.option:hover {
+    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.2);
+}
+
+.quiz-container {
+    animation: slideInUp 0.5s ease-out;
+}
+
+.result-container {
+    animation: slideInUp 0.5s ease-out;
+}
+
+/* Progress bar enhancements */
+.progress {
+    transition: width 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    background: linear-gradient(90deg, #667eea 0%, #764ba2 50%, #667eea 100%);
+    background-size: 200% 100%;
+    animation: shimmer 2s linear infinite;
+}
+
+@keyframes shimmer {
+    0% { background-position: -200% 0; }
+    100% { background-position: 200% 0; }
+}
+
+/* Enhanced category grid for 3 buttons */
+.category-buttons {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+    margin-top: 30px;
+}
+
+/* Interactive feedback */
+.btn {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn:active {
+    transform: scale(0.98);
+}
+
+/* Hidden elements default styling */
+#quiz-container,
+#result-container,
+#question-image-container,
+#sources-section,
+#next-btn,
+#sources-btn {
+    display: none;
+}
+
+/* Show elements when needed */
+.show {
+    display: block !important;
+}
+
 @media (max-width: 600px) {
     .quiz-header h1 {
         font-size: 2em;
@@ -359,5 +553,18 @@ body {
     
     #final-score {
         font-size: 3em;
+    }
+    
+    .question-image {
+        max-height: 200px;
+    }
+    
+    .question-image-container {
+        padding: 15px;
+        margin-bottom: 20px;
+    }
+    
+    .sources-section {
+        padding: 15px;
     }
 }
