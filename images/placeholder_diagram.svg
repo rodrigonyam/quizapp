@@ -1,0 +1,26 @@
+<svg width="400" height="300" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#E3F2FD;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#BBDEFB;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="400" height="300" fill="url(#bgGrad)" stroke="#1976D2" stroke-width="2"/>
+  
+  <!-- Placeholder icon -->
+  <circle cx="200" cy="120" r="40" fill="#1976D2" opacity="0.3"/>
+  <text x="200" y="130" text-anchor="middle" font-family="Arial" font-size="30" fill="#1976D2">📊</text>
+  
+  <!-- Text -->
+  <text x="200" y="180" text-anchor="middle" font-family="Arial" font-size="18" font-weight="bold" fill="#1976D2">Educational Diagram</text>
+  <text x="200" y="205" text-anchor="middle" font-family="Arial" font-size="14" fill="#424242">Interactive Geography Content</text>
+  <text x="200" y="225" text-anchor="middle" font-family="Arial" font-size="12" fill="#666">Image placeholder - Replace with actual diagram</text>
+  
+  <!-- Decorative elements -->
+  <rect x="50" y="260" width="60" height="8" rx="4" fill="#4CAF50" opacity="0.6"/>
+  <rect x="130" y="250" width="40" height="18" rx="4" fill="#FF9800" opacity="0.6"/>
+  <rect x="190" y="255" width="80" height="13" rx="4" fill="#9C27B0" opacity="0.6"/>
+  <rect x="290" y="245" width="50" height="23" rx="4" fill="#F44336" opacity="0.6"/>
+</svg>

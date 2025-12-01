@@ -1,0 +1,44 @@
+<svg width="500" height="300" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse">
+      <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#E0E0E0" stroke-width="0.5"/>
+    </pattern>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="500" height="300" fill="#F0F8FF"/>
+  <rect width="500" height="300" fill="url(#grid)"/>
+  
+  <!-- World outline (simplified) -->
+  <!-- North America -->
+  <path d="M 80 120 Q 60 100 40 120 Q 30 140 50 160 Q 70 150 90 140 Q 100 130 80 120" fill="#90EE90"/>
+  
+  <!-- South America -->
+  <path d="M 110 180 Q 100 160 90 180 Q 85 220 100 240 Q 115 230 120 200 Q 115 180 110 180" fill="#90EE90"/>
+  
+  <!-- Europe -->
+  <path d="M 220 100 Q 200 90 190 110 Q 200 120 220 115 Q 230 105 220 100" fill="#90EE90"/>
+  
+  <!-- Africa -->
+  <path d="M 240 140 Q 220 130 210 150 Q 215 200 235 220 Q 255 210 260 170 Q 250 140 240 140" fill="#90EE90"/>
+  
+  <!-- Asia -->
+  <path d="M 280 80 Q 250 70 240 100 Q 260 130 300 120 Q 350 110 380 100 Q 390 90 380 80 Q 330 70 280 80" fill="#90EE90"/>
+  
+  <!-- Australia -->
+  <path d="M 360 200 Q 340 190 330 200 Q 335 215 355 220 Q 375 215 380 200 Q 370 190 360 200" fill="#90EE90"/>
+  
+  <!-- Grid lines (Mercator projection style) -->
+  <line x1="0" y1="75" x2="500" y2="75" stroke="#4169E1" stroke-width="1" stroke-dasharray="3,3"/>
+  <line x1="0" y1="150" x2="500" y2="150" stroke="#FF0000" stroke-width="2"/>
+  <line x1="0" y1="225" x2="500" y2="225" stroke="#4169E1" stroke-width="1" stroke-dasharray="3,3"/>
+  
+  <line x1="125" y1="0" x2="125" y2="300" stroke="#4169E1" stroke-width="1" stroke-dasharray="3,3"/>
+  <line x1="250" y1="0" x2="250" y2="300" stroke="#FF0000" stroke-width="2"/>
+  <line x1="375" y1="0" x2="375" y2="300" stroke="#4169E1" stroke-width="1" stroke-dasharray="3,3"/>
+  
+  <!-- Labels -->
+  <text x="250" y="25" text-anchor="middle" font-family="Arial" font-size="18" font-weight="bold" fill="#000">Mercator Projection</text>
+  <text x="10" y="155" font-family="Arial" font-size="12" fill="#FF0000">Equator</text>
+  <text x="255" y="295" text-anchor="middle" font-family="Arial" font-size="12" fill="#4169E1">Prime Meridian</text>
+</svg>

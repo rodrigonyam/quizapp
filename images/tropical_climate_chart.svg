@@ -1,0 +1,53 @@
+<svg width="400" height="300" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="400" height="300" fill="#F5F5DC"/>
+  
+  <!-- Chart axes -->
+  <line x1="60" y1="50" x2="60" y2="250" stroke="#000" stroke-width="2"/>
+  <line x1="60" y1="250" x2="350" y2="250" stroke="#000" stroke-width="2"/>
+  
+  <!-- Temperature line (red) -->
+  <polyline points="60,80 90,75 120,70 150,68 180,65 210,70 240,75 270,85 300,95 330,100" 
+            stroke="#FF0000" stroke-width="3" fill="none"/>
+  
+  <!-- Precipitation bars (blue) -->
+  <rect x="70" y="180" width="15" height="70" fill="#0066CC"/>
+  <rect x="100" y="170" width="15" height="80" fill="#0066CC"/>
+  <rect x="130" y="160" width="15" height="90" fill="#0066CC"/>
+  <rect x="160" y="150" width="15" height="100" fill="#0066CC"/>
+  <rect x="190" y="140" width="15" height="110" fill="#0066CC"/>
+  <rect x="220" y="130" width="15" height="120" fill="#0066CC"/>
+  <rect x="250" y="140" width="15" height="110" fill="#0066CC"/>
+  <rect x="280" y="150" width="15" height="100" fill="#0066CC"/>
+  <rect x="310" y="160" width="15" height="90" fill="#0066CC"/>
+  <rect x="340" y="170" width="15" height="80" fill="#0066CC"/>
+  
+  <!-- Axis labels -->
+  <text x="30" y="60" font-family="Arial" font-size="10" fill="#FF0000">30°C</text>
+  <text x="30" y="100" font-family="Arial" font-size="10" fill="#FF0000">25°C</text>
+  <text x="30" y="140" font-family="Arial" font-size="10" fill="#FF0000">20°C</text>
+  <text x="30" y="180" font-family="Arial" font-size="10" fill="#FF0000">15°C</text>
+  
+  <text x="370" y="240" font-family="Arial" font-size="10" fill="#0066CC">300mm</text>
+  <text x="370" y="200" font-family="Arial" font-size="10" fill="#0066CC">200mm</text>
+  <text x="370" y="160" font-family="Arial" font-size="10" fill="#0066CC">100mm</text>
+  
+  <!-- Month labels -->
+  <text x="77" y="270" font-family="Arial" font-size="9" fill="#000">J</text>
+  <text x="107" y="270" font-family="Arial" font-size="9" fill="#000">F</text>
+  <text x="137" y="270" font-family="Arial" font-size="9" fill="#000">M</text>
+  <text x="167" y="270" font-family="Arial" font-size="9" fill="#000">A</text>
+  <text x="197" y="270" font-family="Arial" font-size="9" fill="#000">M</text>
+  <text x="227" y="270" font-family="Arial" font-size="9" fill="#000">J</text>
+  <text x="257" y="270" font-family="Arial" font-size="9" fill="#000">J</text>
+  <text x="287" y="270" font-family="Arial" font-size="9" fill="#000">A</text>
+  <text x="317" y="270" font-family="Arial" font-size="9" fill="#000">S</text>
+  <text x="347" y="270" font-family="Arial" font-size="9" fill="#000">O</text>
+  
+  <!-- Title and legend -->
+  <text x="200" y="30" text-anchor="middle" font-family="Arial" font-size="16" font-weight="bold" fill="#000">Tropical Climate Chart</text>
+  <line x1="80" y1="290" x2="100" y2="290" stroke="#FF0000" stroke-width="3"/>
+  <text x="105" y="295" font-family="Arial" font-size="12" fill="#FF0000">Temperature</text>
+  <rect x="180" y="285" width="15" height="10" fill="#0066CC"/>
+  <text x="200" y="295" font-family="Arial" font-size="12" fill="#0066CC">Precipitation</text>
+</svg>
