@@ -897,7 +897,7 @@ let currentCategory = '';
 
 // DOM Elements - Will be initialized after DOM loads
 let categorySelector, geographyBtn, historyBtn, diagramBtn;
-let questionElement, optionsElement, nextBtn, currentQuestionElement;
+let questionElement, optionsElement, nextBtn, prevBtn, submitBtn, currentQuestionElement;
 let totalQuestionsElement, progressElement, quizContainer, resultContainer;
 let finalScoreElement, resultMessageElement, scoreBreakdownElement;
 let restartBtn, homeBtn, questionImageContainer, questionImage;
@@ -912,6 +912,8 @@ function initializeElements() {
     questionElement = document.getElementById('question');
     optionsElement = document.getElementById('options');
     nextBtn = document.getElementById('next-btn');
+    prevBtn = document.getElementById('prev-btn');
+    submitBtn = document.getElementById('submit-btn');
     currentQuestionElement = document.getElementById('current-question');
     totalQuestionsElement = document.getElementById('total-questions');
     progressElement = document.getElementById('progress');
@@ -929,11 +931,21 @@ function initializeElements() {
     sourcesList = document.getElementById('sources-list');
     sourcesBtn = document.getElementById('sources-btn');
     
-    // Debug: Log if next button is found
+    // Debug: Log if buttons are found
     if (!nextBtn) {
         console.error('Next button not found during initialization!');
     } else {
         console.log('Next button initialized successfully');
+    }
+    if (!prevBtn) {
+        console.error('Previous button not found during initialization!');
+    } else {
+        console.log('Previous button initialized successfully');
+    }
+    if (!submitBtn) {
+        console.error('Submit button not found during initialization!');
+    } else {
+        console.log('Submit button initialized successfully');
     }
 }
 
@@ -1088,11 +1100,25 @@ function loadQuestion() {
         });
     }
     
-    // Hide next button initially
+    // Update navigation button visibility
+    // Show previous button if not on first question
+    if (prevBtn) {
+        prevBtn.style.display = currentQuestion > 0 ? 'block' : 'none';
+    }
+    
+    // Hide next/submit buttons until answer is selected
     if (nextBtn) {
         nextBtn.style.display = 'none';
         nextBtn.classList.remove('btn-next-visible');
     }
+    if (submitBtn) {
+        submitBtn.style.display = 'none';
+    }
+}
+
+// Alias for loadQuestion (for compatibility)
+function displayQuestion() {
+    loadQuestion();
 }
 
 // Handle option selection
@@ -1124,22 +1150,39 @@ function selectOption(selectedIndex, selectedElement) {
         allOptions[question.correct].classList.add('correct');
     }
     
-    // Show next button
-    if (!nextBtn) {
-        // Try to re-initialize if button is missing
-        nextBtn = document.getElementById('next-btn');
+    // Show appropriate navigation button
+    const isLastQuestion = currentQuestion === quizData.length - 1;
+    
+    if (isLastQuestion) {
+        // Show submit button on last question
+        if (!submitBtn) {
+            submitBtn = document.getElementById('submit-btn');
+        }
+        if (submitBtn) {
+            submitBtn.style.display = 'block';
+        }
+        if (nextBtn) {
+            nextBtn.style.display = 'none';
+        }
+    } else {
+        // Show next button on other questions
+        if (!nextBtn) {
+            nextBtn = document.getElementById('next-btn');
+        }
+        if (nextBtn) {
+            nextBtn.style.display = 'block';
+            nextBtn.classList.add('btn-next-visible');
+            nextBtn.style.visibility = 'visible';
+            nextBtn.style.opacity = '1';
+        }
+        if (submitBtn) {
+            submitBtn.style.display = 'none';
+        }
     }
     
-    if (nextBtn) {
-        nextBtn.style.display = 'block';
-        nextBtn.classList.add('btn-next-visible');
-        // Force visibility
-        nextBtn.style.visibility = 'visible';
-        nextBtn.style.opacity = '1';
-    } else {
-        console.error('Next button not found even after re-initialization!');
-        // Create a temporary alert for debugging
-        alert('Next button missing - please refresh the page');
+    // Update previous button visibility
+    if (prevBtn) {
+        prevBtn.style.display = currentQuestion > 0 ? 'block' : 'none';
     }
 }
 
@@ -1148,6 +1191,42 @@ function addButtonListeners() {
     if (nextBtn) {
         nextBtn.addEventListener('click', handleNextQuestion);
         nextBtn.addEventListener('touchstart', handleNextQuestion);
+    }
+    if (prevBtn) {
+        prevBtn.addEventListener('click', handlePreviousQuestion);
+        prevBtn.addEventListener('touchstart', handlePreviousQuestion);
+    }
+    if (submitBtn) {
+        submitBtn.addEventListener('click', finishQuiz);
+        submitBtn.addEventListener('touchstart', finishQuiz);
+    }
+}
+
+// Handle previous question
+function handlePreviousQuestion() {
+    if (currentQuestion > 0) {
+        currentQuestion--;
+        displayQuestion();
+        updateButtonVisibility();
+    }
+}
+
+// Update button visibility based on current question
+function updateButtonVisibility() {
+    // Previous button - show if not on first question
+    if (prevBtn) {
+        prevBtn.style.display = currentQuestion > 0 ? 'block' : 'none';
+    }
+    
+    // Next/Submit button logic
+    const isLastQuestion = currentQuestion === quizData.length - 1;
+    
+    if (nextBtn) {
+        nextBtn.style.display = isLastQuestion ? 'none' : 'none'; // Will be shown when answer is selected
+    }
+    
+    if (submitBtn) {
+        submitBtn.style.display = isLastQuestion ? 'block' : 'none';
     }
     
     if (restartBtn) {
@@ -1163,6 +1242,16 @@ function addButtonListeners() {
     if (sourcesBtn) {
         sourcesBtn.addEventListener('click', handleSources);
         sourcesBtn.addEventListener('touchstart', handleSources);
+    }
+}
+
+// Handle previous question
+function handlePreviousQuestion(e) {
+    e.preventDefault();
+    
+    if (currentQuestion > 0) {
+        currentQuestion--;
+        loadQuestion();
     }
 }
 
