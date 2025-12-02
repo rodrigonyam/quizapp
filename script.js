@@ -895,64 +895,107 @@ let userAnswers = [];
 let quizData = [];
 let currentCategory = '';
 
-// DOM Elements
-const categorySelector = document.getElementById('category-selector');
-const geographyBtn = document.getElementById('geography-btn');
-const historyBtn = document.getElementById('history-btn');
-const diagramBtn = document.getElementById('diagram-btn');
-const questionElement = document.getElementById('question');
-const optionsElement = document.getElementById('options');
-const nextBtn = document.getElementById('next-btn');
-const currentQuestionElement = document.getElementById('current-question');
-const totalQuestionsElement = document.getElementById('total-questions');
-const progressElement = document.getElementById('progress');
-const quizContainer = document.getElementById('quiz-container');
-const resultContainer = document.getElementById('result-container');
-const finalScoreElement = document.getElementById('final-score');
-const resultMessageElement = document.getElementById('result-message');
-const scoreBreakdownElement = document.getElementById('score-breakdown');
-const restartBtn = document.getElementById('restart-btn');
-const homeBtn = document.getElementById('home-btn');
-const questionImageContainer = document.getElementById('question-image-container');
-const questionImage = document.getElementById('question-image');
-const imageSource = document.getElementById('image-source');
-const sourcesSection = document.getElementById('sources-section');
-const sourcesList = document.getElementById('sources-list');
-const sourcesBtn = document.getElementById('sources-btn');
+// DOM Elements - Will be initialized after DOM loads
+let categorySelector, geographyBtn, historyBtn, diagramBtn;
+let questionElement, optionsElement, nextBtn, currentQuestionElement;
+let totalQuestionsElement, progressElement, quizContainer, resultContainer;
+let finalScoreElement, resultMessageElement, scoreBreakdownElement;
+let restartBtn, homeBtn, questionImageContainer, questionImage;
+let imageSource, sourcesSection, sourcesList, sourcesBtn;
 
-// Category selection
-geographyBtn.addEventListener('click', () => {
+// Initialize DOM elements
+function initializeElements() {
+    categorySelector = document.getElementById('category-selector');
+    geographyBtn = document.getElementById('geography-btn');
+    historyBtn = document.getElementById('history-btn');
+    diagramBtn = document.getElementById('diagram-btn');
+    questionElement = document.getElementById('question');
+    optionsElement = document.getElementById('options');
+    nextBtn = document.getElementById('next-btn');
+    currentQuestionElement = document.getElementById('current-question');
+    totalQuestionsElement = document.getElementById('total-questions');
+    progressElement = document.getElementById('progress');
+    quizContainer = document.getElementById('quiz-container');
+    resultContainer = document.getElementById('result-container');
+    finalScoreElement = document.getElementById('final-score');
+    resultMessageElement = document.getElementById('result-message');
+    scoreBreakdownElement = document.getElementById('score-breakdown');
+    restartBtn = document.getElementById('restart-btn');
+    homeBtn = document.getElementById('home-btn');
+    questionImageContainer = document.getElementById('question-image-container');
+    questionImage = document.getElementById('question-image');
+    imageSource = document.getElementById('image-source');
+    sourcesSection = document.getElementById('sources-section');
+    sourcesList = document.getElementById('sources-list');
+    sourcesBtn = document.getElementById('sources-btn');
+}
+
+// Category selection with mobile-friendly events
+function addCategoryListeners() {
+    if (geographyBtn) {
+        geographyBtn.addEventListener('click', handleGeographyClick);
+        geographyBtn.addEventListener('touchstart', handleGeographyClick);
+    }
+    
+    if (historyBtn) {
+        historyBtn.addEventListener('click', handleHistoryClick);
+        historyBtn.addEventListener('touchstart', handleHistoryClick);
+    }
+    
+    if (diagramBtn) {
+        diagramBtn.addEventListener('click', handleDiagramClick);
+        diagramBtn.addEventListener('touchstart', handleDiagramClick);
+    }
+}
+
+function handleGeographyClick(e) {
+    e.preventDefault();
     currentCategory = 'Geography';
     quizData = geographyQuestions;
     startQuiz();
-});
+}
 
-historyBtn.addEventListener('click', () => {
+function handleHistoryClick(e) {
+    e.preventDefault();
     currentCategory = 'African History';
     quizData = historyQuestions;
     startQuiz();
-});
+}
 
-diagramBtn.addEventListener('click', () => {
+function handleDiagramClick(e) {
+    e.preventDefault();
     currentCategory = 'Geography Diagrams';
     quizData = diagramQuestions;
     startQuiz();
-});
-
-// Start quiz
-function startQuiz() {
-    categorySelector.style.display = 'none';
-    quizContainer.style.display = 'block';
-    initQuiz();
 }
 
-// Initialize quiz
+// Start quiz with error handling
+function startQuiz() {
+    try {
+        if (categorySelector) categorySelector.style.display = 'none';
+        if (quizContainer) quizContainer.style.display = 'block';
+        initQuiz();
+    } catch (error) {
+        console.error('Error starting quiz:', error);
+        // Fallback: try to reload the page
+        alert('There was an error starting the quiz. Please refresh the page.');
+    }
+}
+
+// Initialize quiz with error handling
 function initQuiz() {
-    currentQuestion = 0;
-    score = 0;
-    userAnswers = [];
-    totalQuestionsElement.textContent = quizData.length;
-    loadQuestion();
+    try {
+        currentQuestion = 0;
+        score = 0;
+        userAnswers = [];
+        if (totalQuestionsElement) {
+            totalQuestionsElement.textContent = quizData.length;
+        }
+        loadQuestion();
+    } catch (error) {
+        console.error('Error initializing quiz:', error);
+        alert('There was an error loading the quiz. Please refresh the page.');
+    }
 }
 
 // Load question
@@ -1006,24 +1049,37 @@ function loadQuestion() {
     questionElement.textContent = '';
     typeWriterEffect(questionElement, question.question, 30);
     
-    // Display options with stagger animation
-    optionsElement.innerHTML = '';
-    question.options.forEach((option, index) => {
-        const optionDiv = document.createElement('div');
-        optionDiv.className = 'option';
-        optionDiv.textContent = option;
-        optionDiv.style.opacity = '0';
-        optionDiv.style.transform = 'translateY(20px)';
-        optionDiv.addEventListener('click', () => selectOption(index, optionDiv));
-        optionsElement.appendChild(optionDiv);
-        
-        // Stagger animation
-        setTimeout(() => {
-            optionDiv.style.transition = 'all 0.3s ease';
-            optionDiv.style.opacity = '1';
-            optionDiv.style.transform = 'translateY(0)';
-        }, index * 100 + 500);
-    });
+    // Display options with stagger animation and mobile support
+    if (optionsElement) {
+        optionsElement.innerHTML = '';
+        question.options.forEach((option, index) => {
+            const optionDiv = document.createElement('div');
+            optionDiv.className = 'option';
+            optionDiv.textContent = option;
+            optionDiv.style.opacity = '0';
+            optionDiv.style.transform = 'translateY(20px)';
+            
+            // Add both click and touch events for mobile
+            optionDiv.addEventListener('click', (e) => {
+                e.preventDefault();
+                selectOption(index, optionDiv);
+            });
+            optionDiv.addEventListener('touchstart', (e) => {
+                e.preventDefault();
+                selectOption(index, optionDiv);
+            });
+            
+            optionsElement.appendChild(optionDiv);
+            
+            // Stagger animation - faster on mobile
+            const delay = isMobile() ? index * 50 + 200 : index * 100 + 500;
+            setTimeout(() => {
+                optionDiv.style.transition = 'all 0.3s ease';
+                optionDiv.style.opacity = '1';
+                optionDiv.style.transform = 'translateY(0)';
+            }, delay);
+        });
+    }
     
     // Hide next button initially
     nextBtn.style.display = 'none';
@@ -1062,8 +1118,31 @@ function selectOption(selectedIndex, selectedElement) {
     nextBtn.style.display = 'block';
 }
 
-// Next question handler
-nextBtn.addEventListener('click', () => {
+// Next question handler with mobile support
+function addButtonListeners() {
+    if (nextBtn) {
+        nextBtn.addEventListener('click', handleNextQuestion);
+        nextBtn.addEventListener('touchstart', handleNextQuestion);
+    }
+    
+    if (restartBtn) {
+        restartBtn.addEventListener('click', handleRestart);
+        restartBtn.addEventListener('touchstart', handleRestart);
+    }
+    
+    if (homeBtn) {
+        homeBtn.addEventListener('click', handleHome);
+        homeBtn.addEventListener('touchstart', handleHome);
+    }
+    
+    if (sourcesBtn) {
+        sourcesBtn.addEventListener('click', handleSources);
+        sourcesBtn.addEventListener('touchstart', handleSources);
+    }
+}
+
+function handleNextQuestion(e) {
+    e.preventDefault();
     currentQuestion++;
     
     if (currentQuestion < quizData.length) {
@@ -1071,7 +1150,7 @@ nextBtn.addEventListener('click', () => {
     } else {
         showResults();
     }
-});
+}
 
 // Show results
 function showResults() {
@@ -1138,40 +1217,54 @@ function showResults() {
     });
 }
 
-// Restart quiz
-restartBtn.addEventListener('click', () => {
-    resultContainer.style.display = 'none';
-    quizContainer.style.display = 'block';
-    initQuiz();
-});
-
-// Go back to category selection
-homeBtn.addEventListener('click', () => {
-    resultContainer.style.display = 'none';
-    categorySelector.style.display = 'block';
-    sourcesSection.style.display = 'none';
-    sourcesBtn.style.display = 'none';
-    currentCategory = '';
-    quizData = [];
-});
-
-// Show sources
-sourcesBtn.addEventListener('click', () => {
-    if (sourcesSection.style.display === 'none') {
-        sourcesSection.style.display = 'block';
-        sourcesBtn.textContent = 'Hide Sources';
-        displaySources();
-    } else {
-        sourcesSection.style.display = 'none';
-        sourcesBtn.textContent = 'View Sources';
+function handleRestart(e) {
+    e.preventDefault();
+    if (resultContainer && quizContainer) {
+        resultContainer.style.display = 'none';
+        quizContainer.style.display = 'block';
+        initQuiz();
     }
-});
+}
 
-// Typewriter effect function
+function handleHome(e) {
+    e.preventDefault();
+    if (resultContainer && categorySelector && sourcesSection && sourcesBtn) {
+        resultContainer.style.display = 'none';
+        categorySelector.style.display = 'block';
+        sourcesSection.style.display = 'none';
+        sourcesBtn.style.display = 'none';
+        currentCategory = '';
+        quizData = [];
+    }
+}
+
+function handleSources(e) {
+    e.preventDefault();
+    if (sourcesSection && sourcesBtn) {
+        if (sourcesSection.style.display === 'none') {
+            sourcesSection.style.display = 'block';
+            sourcesBtn.textContent = 'Hide Sources';
+            displaySources();
+        } else {
+            sourcesSection.style.display = 'none';
+            sourcesBtn.textContent = 'View Sources';
+        }
+    }
+}
+
+// Typewriter effect function - faster on mobile
 function typeWriterEffect(element, text, speed = 50) {
+    if (!element) return;
+    
+    // Skip typewriter effect on mobile for better performance
+    if (isMobile()) {
+        element.textContent = text;
+        return;
+    }
+    
     let i = 0;
     function typeWriter() {
-        if (i < text.length) {
+        if (i < text.length && element) {
             element.textContent += text.charAt(i);
             i++;
             setTimeout(typeWriter, speed);
@@ -1199,26 +1292,61 @@ function displaySources() {
     });
 }
 
-// Enhanced option selection with sound effects (visual feedback)
+// Enhanced option selection with mobile-friendly feedback
 function addInteractiveEffects() {
-    // Add hover sound effect simulation with visual feedback
-    document.addEventListener('mouseover', (e) => {
+    // Desktop hover effects
+    if (!isMobile()) {
+        document.addEventListener('mouseover', (e) => {
+            if (e.target.classList.contains('option') && !e.target.classList.contains('disabled')) {
+                e.target.style.transform = 'translateX(10px) scale(1.02)';
+            }
+            if (e.target.classList.contains('btn')) {
+                e.target.style.transform = 'translateY(-3px) scale(1.05)';
+            }
+        });
+        
+        document.addEventListener('mouseout', (e) => {
+            if (e.target.classList.contains('option') && !e.target.classList.contains('disabled')) {
+                e.target.style.transform = 'translateX(0) scale(1)';
+            }
+            if (e.target.classList.contains('btn')) {
+                e.target.style.transform = 'translateY(0) scale(1)';
+            }
+        });
+    }
+    
+    // Touch effects for mobile
+    document.addEventListener('touchstart', (e) => {
         if (e.target.classList.contains('option') && !e.target.classList.contains('disabled')) {
-            e.target.style.transform = 'translateX(10px) scale(1.02)';
+            e.target.style.transform = 'translateX(5px) scale(1.02)';
+            e.target.style.backgroundColor = '#e8e8e8';
         }
         if (e.target.classList.contains('btn')) {
-            e.target.style.transform = 'translateY(-3px) scale(1.05)';
+            e.target.style.transform = 'translateY(-2px) scale(1.02)';
         }
     });
     
-    document.addEventListener('mouseout', (e) => {
-        if (e.target.classList.contains('option') && !e.target.classList.contains('disabled')) {
-            e.target.style.transform = 'translateX(0) scale(1)';
+    document.addEventListener('touchend', (e) => {
+        if (e.target.classList.contains('option')) {
+            setTimeout(() => {
+                e.target.style.transform = 'translateX(0) scale(1)';
+                if (!e.target.classList.contains('correct') && !e.target.classList.contains('incorrect')) {
+                    e.target.style.backgroundColor = '#f5f5f5';
+                }
+            }, 150);
         }
         if (e.target.classList.contains('btn')) {
-            e.target.style.transform = 'translateY(0) scale(1)';
+            setTimeout(() => {
+                e.target.style.transform = 'translateY(0) scale(1)';
+            }, 150);
         }
     });
+}
+
+// Detect mobile devices
+function isMobile() {
+    return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || 
+           (window.innerWidth <= 768 && 'ontouchstart' in window);
 }
 
 // Add floating animation to category buttons
@@ -1230,8 +1358,27 @@ function addFloatingAnimation() {
     });
 }
 
-// Initialize interactive effects when DOM is loaded
+// Initialize everything when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
+    // Initialize DOM elements first
+    initializeElements();
+    
+    // Add event listeners
+    addCategoryListeners();
+    addButtonListeners();
+    
+    // Add interactive effects
     addInteractiveEffects();
     addFloatingAnimation();
+    
+    // Ensure proper initial state
+    if (categorySelector) {
+        categorySelector.style.display = 'block';
+    }
+    if (quizContainer) {
+        quizContainer.style.display = 'none';
+    }
+    if (resultContainer) {
+        resultContainer.style.display = 'none';
+    }
 });
