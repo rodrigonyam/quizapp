@@ -528,13 +528,20 @@ body {
 #result-container,
 #question-image-container,
 #sources-section,
-#next-btn,
 #sources-btn {
+    display: none;
+}
+
+#next-btn {
     display: none;
 }
 
 /* Show elements when needed */
 .show {
+    display: block !important;
+}
+
+.btn-next-visible {
     display: block !important;
 }
 

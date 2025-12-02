@@ -928,6 +928,13 @@ function initializeElements() {
     sourcesSection = document.getElementById('sources-section');
     sourcesList = document.getElementById('sources-list');
     sourcesBtn = document.getElementById('sources-btn');
+    
+    // Debug: Log if next button is found
+    if (!nextBtn) {
+        console.error('Next button not found during initialization!');
+    } else {
+        console.log('Next button initialized successfully');
+    }
 }
 
 // Category selection with mobile-friendly events
@@ -1082,7 +1089,10 @@ function loadQuestion() {
     }
     
     // Hide next button initially
-    nextBtn.style.display = 'none';
+    if (nextBtn) {
+        nextBtn.style.display = 'none';
+        nextBtn.classList.remove('btn-next-visible');
+    }
 }
 
 // Handle option selection
@@ -1115,7 +1125,22 @@ function selectOption(selectedIndex, selectedElement) {
     }
     
     // Show next button
-    nextBtn.style.display = 'block';
+    if (!nextBtn) {
+        // Try to re-initialize if button is missing
+        nextBtn = document.getElementById('next-btn');
+    }
+    
+    if (nextBtn) {
+        nextBtn.style.display = 'block';
+        nextBtn.classList.add('btn-next-visible');
+        // Force visibility
+        nextBtn.style.visibility = 'visible';
+        nextBtn.style.opacity = '1';
+    } else {
+        console.error('Next button not found even after re-initialization!');
+        // Create a temporary alert for debugging
+        alert('Next button missing - please refresh the page');
+    }
 }
 
 // Next question handler with mobile support
