@@ -550,6 +550,101 @@ const geographyQuestions = [
         question: "Which is the largest city in South America?",
         options: ["Buenos Aires", "São Paulo", "Lima", "Bogotá"],
         correct: 1
+    },
+    {
+        question: "What is the capital of Cuba?",
+        options: ["Santiago de Cuba", "Havana", "Holguín", "Camagüey"],
+        correct: 1
+    },
+    {
+        question: "Which country is the largest producer of vanilla?",
+        options: ["Madagascar", "Mexico", "Indonesia", "India"],
+        correct: 0
+    },
+    {
+        question: "What is the capital of Venezuela?",
+        options: ["Maracaibo", "Valencia", "Caracas", "Barquisimeto"],
+        correct: 2
+    },
+    {
+        question: "Which city is known as the 'City of Lights'?",
+        options: ["Las Vegas", "Paris", "New York", "Tokyo"],
+        correct: 1
+    },
+    {
+        question: "What is the capital of Ecuador?",
+        options: ["Guayaquil", "Quito", "Cuenca", "Machala"],
+        correct: 1
+    },
+    {
+        question: "Which country produces the most avocados?",
+        options: ["Mexico", "Chile", "Peru", "Colombia"],
+        correct: 0
+    },
+    {
+        question: "What is the capital of Uruguay?",
+        options: ["Punta del Este", "Montevideo", "Salto", "Paysandú"],
+        correct: 1
+    },
+    {
+        question: "Which city is the largest in Pakistan?",
+        options: ["Islamabad", "Lahore", "Karachi", "Faisalabad"],
+        correct: 2
+    },
+    {
+        question: "What is the capital of Paraguay?",
+        options: ["Ciudad del Este", "Asunción", "San Lorenzo", "Luque"],
+        correct: 1
+    },
+    {
+        question: "Which country is the largest exporter of quinoa?",
+        options: ["Peru", "Bolivia", "Ecuador", "Colombia"],
+        correct: 1
+    },
+    {
+        question: "What is the capital of Bolivia?",
+        options: ["Santa Cruz", "La Paz", "Cochabamba", "Sucre"],
+        correct: 3
+    },
+    {
+        question: "Which city is known as the 'Garden City of India'?",
+        options: ["Chennai", "Pune", "Bangalore", "Kochi"],
+        correct: 2
+    },
+    {
+        question: "What is the capital of Libya?",
+        options: ["Benghazi", "Tripoli", "Misrata", "Tobruk"],
+        correct: 1
+    },
+    {
+        question: "Which country produces the most pistachios?",
+        options: ["Iran", "United States", "Turkey", "Syria"],
+        correct: 0
+    },
+    {
+        question: "What is the capital of Tunisia?",
+        options: ["Sfax", "Tunis", "Sousse", "Kairouan"],
+        correct: 1
+    },
+    {
+        question: "Which city is the largest in Iran?",
+        options: ["Isfahan", "Tehran", "Mashhad", "Shiraz"],
+        correct: 1
+    },
+    {
+        question: "What is the capital of Algeria?",
+        options: ["Oran", "Algiers", "Constantine", "Annaba"],
+        correct: 1
+    },
+    {
+        question: "Which country is the largest producer of dates?",
+        options: ["Iraq", "Saudi Arabia", "Iran", "Egypt"],
+        correct: 0
+    },
+    {
+        question: "What is the capital of Sudan?",
+        options: ["Port Sudan", "Khartoum", "Omdurman", "Kassala"],
+        correct: 1
     }
 ];
 
@@ -602,6 +697,101 @@ const historyQuestions = [
     {
         question: "What was Zambia called before independence in 1964?",
         options: ["British Zambia", "Northern Rhodesia", "Zambezi Territory", "British Central Africa"],
+        correct: 1
+    },
+    {
+        question: "Who was the first President of independent Kenya?",
+        options: ["Jomo Kenyatta", "Daniel arap Moi", "Mwai Kibaki", "Tom Mboya"],
+        correct: 0
+    },
+    {
+        question: "What was the main anti-colonial movement in Algeria?",
+        options: ["FFS", "FLN", "RCD", "MSP"],
+        correct: 1
+    },
+    {
+        question: "Who led Morocco to independence from France in 1956?",
+        options: ["Hassan II", "Mohammed V", "Mohammed VI", "Allal al-Fassi"],
+        correct: 1
+    },
+    {
+        question: "What was Ethiopia called during Italian occupation (1936-1941)?",
+        options: ["Italian Ethiopia", "East Africa", "Italian East Africa", "Abyssinia Colony"],
+        correct: 2
+    },
+    {
+        question: "Who was the founder of modern Libya?",
+        options: ["Muammar Gaddafi", "King Idris I", "Omar Mukhtar", "Ali Zeidan"],
+        correct: 1
+    },
+    {
+        question: "What year did Nigeria gain independence?",
+        options: ["1958", "1960", "1962", "1963"],
+        correct: 1
+    },
+    {
+        question: "Who was known as the 'Lion of Africa' for resistance against colonialism?",
+        options: ["Haile Selassie", "Omar Mukhtar", "Samori Touré", "Menelik II"],
+        correct: 0
+    },
+    {
+        question: "What was Angola's main liberation movement?",
+        options: ["FNLA", "UNITA", "MPLA", "UPA"],
+        correct: 2
+    },
+    {
+        question: "Who led Mozambique to independence?",
+        options: ["Samora Machel", "Joaquim Chissano", "Eduardo Mondlane", "Armando Guebuza"],
+        correct: 0
+    },
+    {
+        question: "What was the former name of Burkina Faso?",
+        options: ["French Sudan", "Upper Volta", "French Guinea", "Ivory Coast"],
+        correct: 1
+    },
+    {
+        question: "Who was the first President of independent Ghana?",
+        options: ["Kwame Nkrumah", "Kofi Busia", "Jerry Rawlings", "John Mahama"],
+        correct: 0
+    },
+    {
+        question: "What year did South Africa end apartheid?",
+        options: ["1990", "1992", "1994", "1996"],
+        correct: 2
+    },
+    {
+        question: "Who was Uganda's first Prime Minister after independence?",
+        options: ["Idi Amin", "Milton Obote", "Yoweri Museveni", "Benedicto Kiwanuka"],
+        correct: 3
+    },
+    {
+        question: "What was the Berlin Conference of 1884-1885 also known as?",
+        options: ["Scramble for Africa", "Congo Conference", "African Partition", "Colonial Summit"],
+        correct: 1
+    },
+    {
+        question: "Who led the resistance against German colonial rule in Namibia?",
+        options: ["Samuel Maharero", "Hendrik Witbooi", "Jacob Morenga", "All of the above"],
+        correct: 3
+    },
+    {
+        question: "What was the main cash crop that led to colonization of many West African countries?",
+        options: ["Coffee", "Cocoa", "Cotton", "Palm oil"],
+        correct: 1
+    },
+    {
+        question: "Who was known as the 'Father of Pan-Africanism'?",
+        options: ["Marcus Garvey", "W.E.B. Du Bois", "Kwame Nkrumah", "Haile Selassie"],
+        correct: 1
+    },
+    {
+        question: "What was the Mau Mau uprising in Kenya primarily about?",
+        options: ["Religious freedom", "Land rights", "Independence", "All of the above"],
+        correct: 3
+    },
+    {
+        question: "Who was the last Emperor of Ethiopia?",
+        options: ["Menelik II", "Haile Selassie", "Zara Yaqob", "Tewodros II"],
         correct: 1
     }
 ];
@@ -885,6 +1075,139 @@ const diagramQuestions = [
         image: "images/weber_location_theory.svg",
         source: "Industrial Geography Association",
         options: ["Central Place Theory", "Weber's Location Theory", "Growth Pole Theory", "Cumulative Causation"],
+        correct: 1
+    },
+    {
+        question: "What type of coastal process is shown in this longshore drift diagram?",
+        image: "images/longshore_drift.svg",
+        source: "Coastal Engineering Research Center",
+        options: ["Wave Refraction", "Longshore Drift", "Beach Nourishment", "Tidal Bore"],
+        correct: 1
+    },
+    {
+        question: "This cross-section illustrates which type of fault system?",
+        image: "images/normal_fault.svg",
+        source: "U.S. Geological Survey",
+        options: ["Strike-slip Fault", "Normal Fault", "Reverse Fault", "Thrust Fault"],
+        correct: 1
+    },
+    {
+        question: "What urban development pattern is shown in this satellite image?",
+        image: "images/urban_heat_island.svg",
+        source: "NASA Earth Observatory",
+        options: ["Green Corridor", "Urban Heat Island", "Transit Corridor", "Industrial Zone"],
+        correct: 1
+    },
+    {
+        question: "This hydrological diagram represents which water management system?",
+        image: "images/reservoir_system.svg",
+        source: "International Commission on Large Dams",
+        options: ["Natural Lake", "Reservoir System", "Wetland Complex", "River Delta"],
+        correct: 1
+    },
+    {
+        question: "What type of agricultural terracing is illustrated in this diagram?",
+        image: "images/rice_terraces.svg",
+        source: "International Rice Research Institute",
+        options: ["Bench Terraces", "Rice Terraces", "Contour Strips", "Gradient Terraces"],
+        correct: 1
+    },
+    {
+        question: "This meteorological chart shows which weather phenomenon?",
+        image: "images/hurricane_structure.svg",
+        source: "National Hurricane Center",
+        options: ["Tornado", "Hurricane", "Thunderstorm", "Cyclone"],
+        correct: 1
+    },
+    {
+        question: "What type of geological formation is depicted in this karst landscape?",
+        image: "images/karst_topography.svg",
+        source: "International Association of Hydrogeologists",
+        options: ["Volcanic Landscape", "Karst Topography", "Glacial Landscape", "Desert Landscape"],
+        correct: 1
+    },
+    {
+        question: "This renewable energy diagram represents which power generation method?",
+        image: "images/wind_farm_layout.svg",
+        source: "Global Wind Energy Council",
+        options: ["Solar Array", "Wind Farm", "Hydroelectric", "Geothermal Plant"],
+        correct: 1
+    },
+    {
+        question: "What type of transportation infrastructure is shown in this network diagram?",
+        image: "images/high_speed_rail.svg",
+        source: "International Union of Railways",
+        options: ["Highway System", "High-Speed Rail", "Metro Network", "Bus Rapid Transit"],
+        correct: 1
+    },
+    {
+        question: "This ecological succession diagram shows which environmental process?",
+        image: "images/forest_succession.svg",
+        source: "Ecological Society of America",
+        options: ["Primary Succession", "Forest Succession", "Aquatic Succession", "Desert Succession"],
+        correct: 1
+    },
+    {
+        question: "What type of mining operation is illustrated in this cross-section?",
+        image: "images/open_pit_mining.svg",
+        source: "International Council on Mining and Metals",
+        options: ["Underground Mining", "Open-Pit Mining", "Placer Mining", "Strip Mining"],
+        correct: 1
+    },
+    {
+        question: "This urban planning model represents which city development theory?",
+        image: "images/garden_city_model.svg",
+        source: "Garden Cities and Town Planning Association",
+        options: ["Linear City", "Garden City", "Compact City", "Edge City"],
+        correct: 1
+    },
+    {
+        question: "What type of natural disaster risk is shown in this hazard map?",
+        image: "images/flood_risk_zones.svg",
+        source: "Federal Emergency Management Agency",
+        options: ["Earthquake Zones", "Flood Risk Zones", "Wildfire Areas", "Landslide Zones"],
+        correct: 1
+    },
+    {
+        question: "This atmospheric circulation pattern represents which global wind system?",
+        image: "images/trade_winds.svg",
+        source: "World Meteorological Organization",
+        options: ["Westerlies", "Trade Winds", "Polar Easterlies", "Jet Stream"],
+        correct: 1
+    },
+    {
+        question: "What type of sustainable development is illustrated in this circular economy model?",
+        image: "images/circular_economy.svg",
+        source: "Ellen MacArthur Foundation",
+        options: ["Linear Economy", "Circular Economy", "Green Economy", "Digital Economy"],
+        correct: 1
+    },
+    {
+        question: "This geological time diagram shows which major extinction event?",
+        image: "images/mass_extinction.svg",
+        source: "Paleontological Society",
+        options: ["Ordovician Extinction", "Mass Extinction Event", "Cambrian Explosion", "Ice Age Event"],
+        correct: 1
+    },
+    {
+        question: "What type of water treatment process is shown in this facility diagram?",
+        image: "images/water_treatment_plant.svg",
+        source: "Water Environment Federation",
+        options: ["Desalination Plant", "Water Treatment Plant", "Sewage Treatment", "Recycling Facility"],
+        correct: 1
+    },
+    {
+        question: "This smart city infrastructure diagram represents which technology integration?",
+        image: "images/smart_city_network.svg",
+        source: "Smart Cities Council",
+        options: ["5G Network", "Smart City Network", "Internet Grid", "Digital Highway"],
+        correct: 1
+    },
+    {
+        question: "What type of conservation area management is illustrated in this zoning map?",
+        image: "images/biosphere_reserve.svg",
+        source: "UNESCO Man and Biosphere Programme",
+        options: ["National Park", "Biosphere Reserve", "Wildlife Sanctuary", "Marine Reserve"],
         correct: 1
     }
 ];
